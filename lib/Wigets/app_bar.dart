@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-PreferredSizeWidget appBarWid() {
+PreferredSizeWidget appBarWid(String title) {
   return AppBar(
     actions: [
       Icon(Icons.camera_alt_outlined),
@@ -9,7 +9,7 @@ PreferredSizeWidget appBarWid() {
     ],
     backgroundColor: Colors.white,
     title: Text(
-      "Whatsapp",
+      "$title",
       style: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.bold,

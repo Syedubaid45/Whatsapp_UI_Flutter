@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_ui/Chats_screen.dart';
-import 'package:whatsapp_ui/app_bar.dart';
-import 'package:whatsapp_ui/bottom_nav_bar.dart';
-import 'package:whatsapp_ui/calls_screen.dart';
-import 'package:whatsapp_ui/communities_screen.dart';
-import 'package:whatsapp_ui/floating_act_button.dart';
-import 'package:whatsapp_ui/updates_screen.dart';
+import 'package:whatsapp_ui/Screens/Chats_screen.dart';
+import 'package:whatsapp_ui/Wigets/app_bar.dart';
+import 'package:whatsapp_ui/Wigets/bottom_nav_bar.dart';
+import 'package:whatsapp_ui/Screens/calls_screen.dart';
+import 'package:whatsapp_ui/Screens/communities_screen.dart';
+import 'package:whatsapp_ui/Wigets/floating_act_button.dart';
+import 'package:whatsapp_ui/Screens/updates_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -19,10 +19,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     ChatScreen(),
-    UpdateScreen(),
+    UpdatesScreen(),
     CommunityScreen(),
     CallScreen(),
   ];
+
+  final List<String> _titles = ['Chats', 'Updates', 'Communities', 'Calls'];
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
           _currentIndex = index;
         });
       }),
+
       floatingActionButton: customFAB(() {}),
       backgroundColor: Colors.white,
-      appBar: appBarWid(),
+      appBar: appBarWid(_titles[_currentIndex]),
       body: _screens[_currentIndex],
     );
   }

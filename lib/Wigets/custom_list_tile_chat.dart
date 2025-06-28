@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-Widget CustomListTile(String iurl, String title, String msg, String msgTime) {
+Widget CustomListTileChat(
+  String iurl,
+  String title,
+  String msg,
+  String msgTime,
+) {
   return ListTile(
     leading: CircleAvatar(backgroundImage: NetworkImage(iurl)),
     title: Text(title),
